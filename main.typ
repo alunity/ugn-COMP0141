@@ -96,7 +96,7 @@ A _strategic_ adversary optimally uses resources.
 
 / Spoofing: impersonation (Authenticity)
 / Tampering: modification of data (Integrity)
-/ Repudiation: claiming (whether honestly or not) a lack of responsibility (Non-repudiability)
+/ Repudiation: claiming (whether honestly or not) a lack of responsibility (Non-repudiation)
 / Information disclosure: unauthorized access (Confidentiality)
 / Denial of service: exhausting / overwhelming a server's ability to provide service (Availability)
 / Elevation of privilege: failure of Authorization control
@@ -149,7 +149,7 @@ Common problems and ways to improve:
 
 == Design Principles
 
-Generate considerations when designing secure systems.
+General considerations when designing secure systems.
 
 The following 8 principles spell out ELLF COPS.
 
@@ -175,7 +175,7 @@ Additional principles:
 
 / Design for Updating: Vulnerabilities will always be discovered, so make your system updatable.
 
-/ Prudent Paranoia: Don't underestimate the effort adversaries will go to. "Just because you'\re paranoid doesn't mean they aren't after you."
+/ Prudent Paranoia: Don't underestimate the effort adversaries will go to. "Just because you're paranoid doesn't mean they aren't after you."
 
 / Privacy Promotion:
 
@@ -744,7 +744,9 @@ Three general factors:
 A good password system must simultaneously satisfy contradictory requirements:
 - easy to _memorize_, but hard to _guess_
 - easy to _use_, but hard to be _stolen_
-- easy to store _securely_, but also _retrievable_
+- easy to store _securely_, but also _retrievable_\*
+
+\*Whether retrievability is desired is debatable :p
 
 === Password Storage
 
@@ -1136,7 +1138,7 @@ Logistical challenges:
 Android has a unique and effective access control / security model:
 
 - per-application (per-user) permissions (e.g. GPS access in a mobile app): higher granularity
-- runs SELinux which enforces MAC over all processes
+- runs SELinux which enforces MAC over all processes (every process runs as unique user)
 - uses per-app sandboxing: apps cannot access outside its own data by default
 - runs the user as non-root by default (and in fact never grants the user root)
 
