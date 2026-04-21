@@ -347,7 +347,7 @@ $op("Dec")(C) = C^d mod N$
 
 === random details
 
-One-way functions' existence depend on N $!=$ NP, which is _unproved_.
+One-way functions' existence depend on P $!=$ NP, which is _unproved_.
 Even many symmetric ciphers that do not depend on one-way functions, like AES, are also _unproved_ regarding their security.
 In practice, the agreement of an algorithm's security is purely social (based on the lack of vulnerabilities found after "significant" scrutiny)
 
