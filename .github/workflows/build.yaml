@@ -1,0 +1,27 @@
+name: Release 
+on:
+  push:
+    branches:
+      - main
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: typst-community/setup-typst@v5
+      - run: typst compile main.typ main.pdf
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view latest >/dev/null 2>&1; then
+            gh release edit latest --title "ugn-COMP0141 - $GITHUB_SHA" --target "$GITHUB_SHA"
+            gh release upload latest main.pdf --clobber
+          else
+            gh release create latest main.pdf --title "ugn-COMP0141 - $GITHUB_SHA" --notes "Automated PDF build from $GITHUB_SHA" --target "$GITHUB_SHA" --latest
+          fi
