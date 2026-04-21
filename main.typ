@@ -289,7 +289,7 @@ AES...
 
 === Key Exchange
 
-The Diffie-Hellman (DH) key exchange protocol allows two people to create a shared secret key over an insure communication channel without ever sending the key itself.
+The Diffie-Hellman (DH) key exchange protocol allows two people to create a shared secret key over an insecure communication channel without ever sending the key itself.
 
 + *Public parameters* \
   Alice and Bob agree on prime $p$ and base generator $g$.
@@ -328,7 +328,7 @@ A problem of symmetric encryption arises in many-to-many communication setups: t
 
 / Chosen Ciphertext Attack: (CCA) Adversaries that have access to a decryption oracle.
 
-/ Indistinguisability from CPA: (IND-CPA security) A security property where CPAs do not allow an adversary to distinguish between the ciphertexts of one chosen plaintext from another.
+/ Indistinguishability from CPA: (IND-CPA security) A security property where CPAs do not allow an adversary to distinguish between the ciphertexts of one chosen plaintext from another.
 
 / Indistinguishability from CCA: (IND-CCA security) A security property where CCAs do not allow an adversary to distinguish between the ciphertexts of one chosen plaintext from another. This is strictly stronger than IND-CPA.
 
@@ -422,7 +422,7 @@ To communicate with a given domain, you need its public key. X.509 is important 
 == Thinking Socio-Technically
 
 To build truly robust security systems, one must avoid viewing technical and social aspects in isolation.
-A _socio-technical_ approach combimes
+A _socio-technical_ approach combines
 - technical elements: authentication, encryption, identity management systems, etc.
 - social elements: people, workplace culture, usage context, user limitations...
 
@@ -502,7 +502,7 @@ they should provide simple actionable steps.
 
 / Fogg Behavior Model: Users need Motivation, Ability (system usability), and a Prompt to change behavior.
 
-/ MINDSPACE Framework: Fractors influencing behavior change include Messenger, Incentives, Norms, Defaults, Salience, Priming, Affect, Commitments, and Ego.
+/ MINDSPACE Framework: Factors influencing behavior change include Messenger, Incentives, Norms, Defaults, Salience, Priming, Affect, Commitments, and Ego.
 
 *Simulated phishing* attacks can train staff to spot malicious indicators and may identify organizational vulnerabilities.
 However, adversaries continually adapt, requiring frequent training or obsolescence.
@@ -544,7 +544,7 @@ Core redesigns are necessary, but impossible to deploy globally.
 
 / Denial of Service Attack: Preventing _authorized_ access to a system or resource, usually by exhaustion achieved via techniques like _amplification_.
 
-/ Resource Exhaustion: (aka. Flooding) A mechanism to execute DoS: intentionally consuing a finite resource until none is left for legitimate users. \
+/ Resource Exhaustion: (aka. Flooding) A mechanism to execute DoS: intentionally consuming a finite resource until none is left for legitimate users. \
   *Volumetric*: saturating (network) link bandwidth (e.g. UDP floods). \
   *Protocol*: saturating limits in software limits (e.g. TCP connection tables, using SYN floods). \
   *Application*: exhausting physical compute resources (e.g. RAM, database connections).
@@ -566,7 +566,7 @@ As should be evident, some DoS vectors are created by security mechanisms themse
 
 ==== Link Layer
 
-802.11b Wi-Fi (ethernet / physical links are relatively more secure)
+802.11b Wi-Fi (Ethernet / physical links are relatively more secure)
 
 - Jamming: simple continuous transmission on the 2.4GHz freq (with enough power to drown out others)
 - Network Allocation Vector (NAV) Bug: setting the 15-bit channel-reservation field to its max value prevents other nodes from transmitting
@@ -624,7 +624,7 @@ memcached used to use UDP by default, making the spoofing trivial (does not requ
 
 == DoS Mitigation Strategies
 
-=== Architectural Defuses
+=== Architectural Defenses
 
 Proxies
 
@@ -664,7 +664,7 @@ Botnets are used for _Distributed_ DoS (DDos), spamming, email harvesting, keylo
 === Takedown Strategies
 
 - Attack C&C Infrastructure: seize domains or take down IRCs
-- De-peering: disconnecting hosting services that "don't care" about malicious services fromo the wider internet.
+- De-peering: disconnecting hosting services that "don't care" about malicious services from the wider internet.
 - Honeypots: deploying deliberately vulnerable bait targets to get infected; researchers can then study / reverse-engineer malware.
 
 == Malware
@@ -773,7 +773,7 @@ Dictionary attacks on a per-user basis still works.
 
 A small (\~10) GPU cluster can perform  $~10^11$ (SHA-512) hashes per second, making it possible to crack hashes (by exhausting dictionaries) on the hourly timescale.
 (`bcrypt` is significantly slower, at $~10^6$/s.) \
-Regardless of a slow hash function or not, by NOT choosing a password that could end up in a dictionary (e.g. psuedo-random strings), you get cracking-resistance for free.
+Regardless of a slow hash function or not, by NOT choosing a password that could end up in a dictionary (e.g. pseudo-random strings), you get cracking-resistance for free.
 
 == What you have -- Cryptographic Tokens
 
