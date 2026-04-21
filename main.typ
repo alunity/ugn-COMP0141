@@ -1031,9 +1031,14 @@ The system complementary to the UNIX Permissions model.
 Specifically, user accounts are identified by and represented as numeric IDs.
 
 There are three User IDs (UIDs) for a process:
-- Effective UID (EUID): what the reference monitor uses
-- Real UID (RUID): the user who originally started the process
-- Saved UID (SUID): stores the EUID before any changes (useful for restoring)
+- Real UID (RUID): identifies who the process _belongs_ to
+- Effective UID (EUID): what the reference monitor uses for permissions
+- Saved UID (SUID): used to store a previous state of the EUID
+
+All processes are spawned by a parent (except `init`); on process creation:
+- RUID is inherited from parent's RUID
+- EUID is inherited from parent's EUID, or set to file's owner if `setuid` bit is set (see below)
+- SUID is set to the same as EUID
 
 Changing UIDs:
 - Root: can change all 3 to anything
@@ -1044,10 +1049,9 @@ Changing UIDs:
 === Elevating Privileges (`setuid` bit)
 
 Unprivileged users often need _elevation_ for specific operations (e.g. `passwd` modifies `/etc/shadow`, which only root can r/w). \
-The setuid permission bit (the 12th bit) on an executable file means when when the file is executed, the process's EUID is set to the file's owner rather than the executing user (default).
-Note that the SUID saves the actual executing user.
+The setuid permission bit (the 12th bit) on an executable file means when when the file is executed, the process's EUID (and SUID) is set to the file's owner rather than inheriting the parent's (default).
 
-(The setgid bit is the 11th bit, and does the same thing as setuid... but sets the group ID instead.)
+(The setgid bit is the 11th bit, and works similarly but for groups instead of users.)
 
 Pros of UNIX model:
 - simple
