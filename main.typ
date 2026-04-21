@@ -376,6 +376,11 @@ $op("Verify")(M, sigma): "check that" sigma^e equiv M thick mod N$
 
 / Existential Unforgeability under Chosen Message Attack: (EUF-CMA security) Where a system is immune to CMA; one will not be able to forge a signature for any message, even after seeing signatures for messages of their choice.
 
+NOTE: "textbook" RSA (what we have here) signatures are _not_ EUF-CMA.
+Forgery without oracle: pick $sigma$, set $M = sigma^e mod N$ and the $(M, sigma)$ pair is valid (although no control over $M$'s content).
+Forgery with oracle: RSA is multiplicatively homomorphic, so $sigma_1 sigma_2$ signs $M_1 M_2$ for any two pairs of message-signatures.
+Real schemes sign $"pad"("hash"(M))$, not raw $M$.
+
 == Message Authentication Codes
 
 Like signatures, but uses symmetric ciphers.
