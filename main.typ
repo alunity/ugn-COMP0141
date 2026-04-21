@@ -468,7 +468,7 @@ A system that lacks usability is fundamentally insecure as users will misuse or 
 
 / The 5Es of Usability: (from Whitney Quesenbery) Effectiveness, Efficiency, Engagement, Error Tolerance (allowing users to recover from mistakes), and Ease of Learning.
 
-NOTE that the slides incorrectly attributes these to the Nielsen Normal Group...
+NOTE that the slides incorrectly attributes these to the Nielsen Norman Group...
 
 / Affordances & Signifiers: Systems should use familiar design patterns (e.g. a door with a pull handle naturally affords pulling)
 
