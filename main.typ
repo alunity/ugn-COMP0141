@@ -320,9 +320,18 @@ Asymmetric encryption (aka. public-key cryptography) mainly solves logistical co
 A problem of symmetric encryption arises in many-to-many communication setups: the number of keys in the system scales quadratically.
 
 
-/ Chosen Ciphertext Attack: (CCA) Adversary chooses a plaintext and then obtains its encrypted form.
+/ Encryption Oracle: A black-box entity that encrypts any plaintext on demand.
 
-/ Indistinguishability from CCA: (IND-CCA security) where a system is immune to CCA; one will not be able to distinguish between the encryptions of any pair of arbitrary plaintexts.
+/ Decryption Oracle: A black-box entity that decrypts any ciphertext on demand.
+
+/ Chosen Plaintext Attack: (CPA) Adversaries that have access to an encryption oracle. E.g., influencing the message of a sender and then snooping the ciphertext in transit.
+
+/ Chosen Ciphertext Attack: (CCA) Adversaries that have access to a decryption oracle.
+
+/ Indistinguisability from CPA: (IND-CPA security) A security property where CPAs do not allow an adversary to distinguish between the ciphertexts of one chosen plaintext from another.
+
+/ Indistinguishability from CCA: (IND-CCA security) A security property where CCAs do not allow an adversary to distinguish between the ciphertexts of one chosen plaintext from another. This is strictly stronger than IND-CPA.
+
 
 *RSA*:
 - choose 2 large primes $p$ and $q$
