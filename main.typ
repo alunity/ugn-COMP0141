@@ -627,7 +627,7 @@ Proxies
 - Client Puzzles: a proof-of-work mechanism requiring clients to solve moderately hard computational problems (very similar to crypto mining).
   A drawback is of course that the computational power varies greatly from professional workstations to mobile devices...
 - CAPTCHAs: application-layer human verification
-- Ingres Filtering: ISPs drop outgoing packets if the source IP is not from within the network (indicating spoofing).
+- Ingress Filtering: ISPs drop outgoing packets if the source IP is not from within the network (indicating spoofing).
   Of course, as long as one ISP does not do this, then its users can more easily perform spoofing.
 
 === Source Identification
