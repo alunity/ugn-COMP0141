@@ -1057,10 +1057,12 @@ All processes are spawned by a parent (except `init`); on process creation:
 - SUID is set to the same as EUID
 
 Changing UIDs:
-- Root: can change all 3 to anything
-- Unprivileged users: change EUID to _either_ RUID or SUID
-- `setuid(x)`: changes all 3 to x
-- `seteuid(x)`: changes EUID to x
+- Root:
+  - `setuid(x)`: changes all 3 to x
+  - `seteuid(x)`: changes EUID to x
+- Unprivileged users:
+  - `setuid(x)`: changes EUID to x only if x is RUID or SUID (or EUID)
+  - `seteuid(x)`: same as `setuid`
 
 === Elevating Privileges (`setuid` bit)
 
