@@ -1101,7 +1101,7 @@ Role-Based Access Control
 
 Below, $X$'s (and $S$'s) are subjects, $O$'s are objects, and $R$'s are access rights. \
 A right $R$ can additionally be marked as "transferable", denoted $R^*$. \
-"_A_ only if $(...)$" means _A_ can only be performed if the right represented by the tuple in the reference monitor's database (access control matrix). \
+"_A_ only if $(...)$" means _A_ can only be performed if the right represented by the tuple is in the reference monitor's database (access control matrix). \
 Similarly, "_A_ generates $(...)$" means _A_ creates the corresponding entry in the access control matrix. \
 $(A, B, R)$ means subject $A$ has right $R$ ("owner" or "control") on subject/object $B$.
 
