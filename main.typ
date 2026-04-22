@@ -771,7 +771,7 @@ Salted hash
 / Rainbow table: dictionary attack but fully pre-computed. Usually uses a much larger dictionary for higher hit-rate.
 
 Rainbow table with dictionary size $d$: hash $d$ strings... profit. \
-With $x$-bit salt: now need to hash $d times 2^x$ string + salt combos... sad.
+With $x$-bit salt: now need to hash $d times 2^x$ string = salt combos... sad.
 
 With a 32-bit salt, there are $~4 times 10^9$ possible salt values requiring as many rainbow tables. \
 Salting defeats universal precomputation, significantly nerfing rainbow tables.
