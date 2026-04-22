@@ -808,7 +808,7 @@ Setup (server-side):
 + server stores value and stores counter $j = 0$
 
 Authentication ($i$-th login)
-+ Alice sends her name, $i$, and $H^(t-i) (w)$
++ user sends their name, $i$, and $H^(t-i) (w)$
 + server checks that $i = j + 1$ AND $H("submitted value") = "stored value"$
 + update stored value to submitted value and increment $j$
 
